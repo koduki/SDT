@@ -1,0 +1,38 @@
+#
+# build slide.
+#
+
+## setting
+input = "main.md"
+work_dir = "target"
+preview_cmd = "open -a Preview"
+
+slide_header = "header.tex"
+slide_theme = "KeynoteLikeGradient"
+
+task :default => "slideview"
+
+
+## tasks
+directory work_dir
+ 
+require 'rake/clean'
+CLEAN << "target"
+
+task :slide => work_dir do
+  output = work_dir + "/" + mk_pdfname(input)
+
+  sh "pandoc --listings -H #{slide_header} -V theme:#{slide_theme} -t beamer #{input} -o #{output}"
+end
+
+task :slideview => :slide do
+  output = work_dir + "/" + mk_pdfname(input)
+
+  sh "#{preview_cmd} #{output}"
+end
+
+def mk_pdfname(input)
+  title = open(input).read.split("\n")[0][1..-1].strip
+  title.downcase.gsub(' ', '-') + "pdf"  
+end
+

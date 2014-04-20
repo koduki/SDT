@@ -12,9 +12,10 @@ What dose "From Document to Code" mean?
 ## Install Manual => provisioning tool
 - chef/puppet
 
-## Operation Manual => deployment tool
+## Operation Manual => deployment tool, CI tool
 - Capystrano
 - Fabric
+- Jenkins
 
 Why do we have to change into code from document?
 ================================================================================
@@ -38,7 +39,8 @@ Why do we have to change into code from document?
 What is reliability ?
 ================================================================================
 ## Two reliabilities
-- reliability of product
+- reliability of document
+- reliability of operation
 - reliability of document
 
 What is reliability of product ?
@@ -48,7 +50,8 @@ What is reliability of product ?
 - Regration test is standard method for preventing degrade. 
 - If you do it by manual, you will exhaust very much time.
 
-## Environment reliability
+What is reliability of operation ?
+================================================================================
 - Human sometimes makes a mistake.
 - If it dose again and again, risks increase.
 - Program dose not a mistake, if code is correct.
@@ -67,5 +70,6 @@ Conclusion
 ================================================================================
 - *"From Document to Code"* is not only cost.
 - Reliability of product.
+- Reliability of operation.
 - Reliability of document.
 - Let's change from document to code!
